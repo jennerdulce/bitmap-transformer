@@ -8,13 +8,16 @@ import java.io.IOException;
 public class App {
 
     public static void main(String[] args) throws IOException {
-//        System.out.println(System.getProperty("user.dir"));
         String inputFilePathToImage = "/Users/jenner/codefellows/Java-401/bitmap-transformer/app/src/main/resources/baldy-8bit.bmp";
         String outputFilePathToFolder = "/Users/jenner/codefellows/Java-401/bitmap-transformer/app/src/main/transformedPictures";
-        String transformName = "greyJohn";
-        Bitmap imageOne = new Bitmap(inputFilePathToImage, outputFilePathToFolder, transformName);
+        String transformGrey = "greyJohn";
+        String transformOutline = "outlineJohn";
+        String transformWidth = "widthJohn";
+        Bitmap imageOne = new Bitmap(inputFilePathToImage, outputFilePathToFolder, transformGrey);
+        Bitmap imageTwo = new Bitmap(inputFilePathToImage, outputFilePathToFolder, transformWidth);
+        Bitmap imageThree = new Bitmap(inputFilePathToImage, outputFilePathToFolder, transformOutline);
         imageOne.transformGrey();
-        imageOne.transformWidth(500);
-        imageOne.transformShirtColor();
+        imageTwo.transformWidth(500);
+        imageThree.transformOutlineColor();
     }
 }
